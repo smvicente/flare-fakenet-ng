@@ -79,7 +79,7 @@ class HTTPListener(object):
         self.server = None
         self.name = 'HTTP'
         self.port = self.config.get('port', 80)
-        self. = None
+        self.sslwrapper = None
 
         self.logger.debug('Initialized with config:')
         for key, value in config.iteritems():
