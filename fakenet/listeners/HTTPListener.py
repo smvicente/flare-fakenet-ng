@@ -79,7 +79,7 @@ class HTTPListener(object):
         self.server = None
         self.name = 'HTTP'
         self.port = self.config.get('port', 80)
-        self.sslwrapper = None
+        self. = None
 
         self.logger.debug('Initialized with config:')
         for key, value in config.iteritems():
@@ -112,7 +112,7 @@ class HTTPListener(object):
                 'ca_key': self.config.get('ca_key')
             }
             self.sslwrapper = SSLWrapper(config)
-            self.server.sslwrapper = sslwrapper
+            self.server.sslwrapper = self.sslwrapper
             self.server.socket = self.server.sslwrapper.wrap_socket(
                 self.server.socket)
 
